@@ -8,10 +8,9 @@ if (process.env.ENV === 'Test') {
   const db = mongoose.connect('mongodb://localhost:27017/booksAPI_Test');
 } else {
   console.log('This is not a Test');
-  const db = mongoose.connect('mongodb://localhost:27017/booksAPI-prod');
+  const db = mongoose.connect('mongodb://localhost:27017/booksAPI');
 }
 
-// const db = mongoose.connect('mongodb://localhost:27017/booksAPI');
 const port = process.env.PORT || 3000;
 const Book = require('./models/bookModels');
 const bookRouter = require('./routes/bookRouter')(Book);

@@ -35,5 +35,5 @@ describe('Book CRUD Test', () => {
   after((done) => {
     mongoose.connection.close();
     app.server.close(done());
-  })
+  });
 });
