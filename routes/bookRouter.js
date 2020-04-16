@@ -27,7 +27,7 @@ function routes(Book) {
       const returnBook = req.book.toJSON();
       returnBook.links = {};
       const genre = req.book.genre.replace(' ', '%20');
-      returnBook.links.FilterByThisGenre = `http://${req.headers.host}/api/books/?genre=${req.book.genre}`
+      returnBook.links.FilterByThisGenre = `http://${req.headers.host}/api/books/?genre=${genre}`;
       res.json(returnBook);
     })
     .put((req, res) => {
